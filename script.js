@@ -30,11 +30,13 @@ fetch(url + "pizza")
 
         console.log(ingredients);
 
+        /***Template Literal***/
+
         result.innerHTML = `
         <img src= ${myMeal.strMealThumb}>
         <div class="details">
            <h2>${myMeal.strMeal}</h2>
-           <h2>${myMeal.strArea}</h2>
+           <h4>${myMeal.strArea}</h4>
         </div>
 
         <div id="ingredient-con"></div>
@@ -42,6 +44,10 @@ fetch(url + "pizza")
             <button id="hide-recipe">X</button>
             <pre id="instructions">${myMeal.strInstructions}</pre>
         </div>
+        
+        <button id="show-recipe">View Recipe</button>
         `;
+
+        let ingredientCon = document.getElementById("ingredient-con";)
 
     });
