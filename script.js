@@ -48,6 +48,10 @@ fetch(url + "pizza")
         <button id="show-recipe">View Recipe</button>
         `;
 
-        let ingredientCon = document.getElementById("ingredient-con";)
+        let ingredientCon = document.getElementById("ingredient-con");
+        let parent = document.createElement("ul");
+        let recipe = document.getElementById("recipe");
+        let hideRecipe = document.getElementById("hide-recipe");
+        let showRecipe = document.getElementById("show-recipe");
 
     });
