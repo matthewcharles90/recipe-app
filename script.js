@@ -61,4 +61,14 @@ fetch(url + "pizza")
             ingredientCon.appendChild(parent);
         });
 
+        // Add Event Listener 
+
+        hideRecipe.addEventListener("click", () => {
+            recipe.style.display = "none";
+        });
+        
+        showRecipe.addEventListener("click", () => {
+            recipe.style.display = "block";
+        })
+
     });
