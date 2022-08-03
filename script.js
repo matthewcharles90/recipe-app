@@ -54,4 +54,11 @@ fetch(url + "pizza")
         let hideRecipe = document.getElementById("hide-recipe");
         let showRecipe = document.getElementById("show-recipe");
 
+        ingredients.forEach((i) => {
+            let child = document.createElement("li");
+            child.innerText = i;
+            parent.appendChild(child);
+            ingredientCon.appendChild(parent);
+        });
+
     });
