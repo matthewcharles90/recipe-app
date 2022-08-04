@@ -5,14 +5,15 @@ let url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 // Event Listener for search button 
 
 searchBtn.addEventListener("click", () => {
+
     let userInput = document.getElementById("user-input").value;
+
     if (userInput.length == 0) {
         result.innerHTML = `<h3>Please enter a dish</h3>`
     }
-})
+    else {
 
-
-fetch(url + "pizza")
+        fetch(url + "pizza")
     .then((response) => response.json())
     .then((data) => {
         let myMeal = data.meals[0]
@@ -79,3 +80,10 @@ fetch(url + "pizza")
             recipe.style.display = "block";
         });
     });
+    
+    }
+
+});
+
+
+
