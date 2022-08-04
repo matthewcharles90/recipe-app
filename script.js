@@ -13,7 +13,7 @@ searchBtn.addEventListener("click", () => {
     }
     else {
 
-        fetch(url + "pizza")
+        fetch(url + userInput)
     .then((response) => response.json())
     .then((data) => {
         let myMeal = data.meals[0]
@@ -48,7 +48,7 @@ searchBtn.addEventListener("click", () => {
            <h4>${myMeal.strArea}</h4>
         </div>
 
-        <div id="ingredient-con"></div>
+        <div id="ingredientSteps"></div>
         <div id="recipe">
             <button id="hide-recipe">X</button>
             <pre id="instructions">${myMeal.strInstructions}</pre>
@@ -57,7 +57,7 @@ searchBtn.addEventListener("click", () => {
         <button id="show-recipe">View Recipe</button>
         `;
 
-        let ingredientCon = document.getElementById("ingredient-con");
+        let ingredientSteps = document.getElementById("ingredientSteps");
         let parent = document.createElement("ul");
         let recipe = document.getElementById("recipe");
         let hideRecipe = document.getElementById("hide-recipe");
@@ -67,7 +67,7 @@ searchBtn.addEventListener("click", () => {
             let child = document.createElement("li");
             child.innerText = i;
             parent.appendChild(child);
-            ingredientCon.appendChild(parent);
+            ingredientSteps.appendChild(parent);
         });
 
         // Add Event Listener 
@@ -79,8 +79,12 @@ searchBtn.addEventListener("click", () => {
         showRecipe.addEventListener("click", () => {
             recipe.style.display = "block";
         });
-    });
-    
+
+        // Catch invalid input
+    }).catch(()=> {
+        result.innerHTML = `<h4>Invalid Entry</h4>`
+    })
+
     }
 
 });
