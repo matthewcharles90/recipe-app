@@ -2,7 +2,15 @@ let result = document.getElementById("result");
 let searchBtn = document.getElementById("search-btn");
 let url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
-let userInput = document.getElementById("user-input").value;
+// Event Listener for search button 
+
+searchBtn.addEventListener("click", () => {
+    let userInput = document.getElementById("user-input").value;
+    if (userInput.length == 0) {
+        result.innerHTML = `<h3>Please enter a dish</h3>`
+    }
+})
+
 
 fetch(url + "pizza")
     .then((response) => response.json())
@@ -66,9 +74,8 @@ fetch(url + "pizza")
         hideRecipe.addEventListener("click", () => {
             recipe.style.display = "none";
         });
-        
+
         showRecipe.addEventListener("click", () => {
             recipe.style.display = "block";
-        })
-
+        });
     });
